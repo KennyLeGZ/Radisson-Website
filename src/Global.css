@@ -1,0 +1,545 @@
+/* Reset & base */
+html, body, #root, app-container {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  line-height: 1.6;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  padding: 0 2rem;
+  background-color: #ffffff;
+  backdrop-filter: blur(10px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+
+.header-left,
+.header-center,
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+.header-left {
+  gap: 1rem;
+  flex: 1;
+}
+
+.header-center {
+  justify-content: center;
+  flex: 1;
+}
+
+.header-right {
+  gap: 1rem;
+  justify-content: flex-end;
+  flex: 1;
+}
+
+.header-address {
+  font-size: 2.5rem; /* Slightly smaller for balance */
+  font-weight: 600; /* Use a numeric value instead of '1rem' */
+  margin: 0;
+  color: #1a1a1a; /* Dark gray for softer contrast than pure black */
+  font-family: 'Inter', 'Playfair Display', Tahoma, Geneva, Verdana, sans-serif;
+  user-select: none;
+  cursor: pointer;
+
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.08); /* Subtle lift */
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+  position: relative;
+  display: inline-block;
+}
+
+@keyframes underlineGrow {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+
+.header-address:hover {
+  color: #555555; /* text color on hover */
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+
+.header-address:hover::after {
+  background-color: #555555; /* underline color on hover */
+}
+
+.header-address img {
+  height: 70px; /* Increase this value to make logo bigger */
+  width: 50px;
+}
+
+.header-buttons {
+  display: flex;
+  flex-direction: row;  /* default, but good to be explicit */
+  gap: 1rem;           /* space between buttons */
+  align-items: center; /* vertically center buttons if they differ in height */
+}
+
+
+.header-buttons button {
+  padding: 0.55rem 1.8rem;
+  min-width: 140px;
+  border-radius: 6px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem; /* space between icon and text */
+  box-sizing: border-box;
+  font-size: 1rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  user-select: none;
+  box-shadow: 0 2px 6px rgba(75, 75, 75, 0.12);
+}
+
+.nav-header-link {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0 12px;
+  font: inherit;
+  color: #000000;
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: color 0.25s ease, text-shadow 0.25s ease;
+}
+
+.nav-header-link:hover {
+  color: #555555;
+  font-weight: 600; /* slightly bolder */
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+
+.nav-header-btn:focus,
+.apply-btn:focus,
+.contact-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(123, 102, 81, 0.3); /* soft brown focus ring */
+}
+
+/* Desktop links and buttons - hidden on mobile */
+.desktop-links, .desktop-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Hamburger icon - only visible on mobile */
+.hamburger-icon {
+  display: none;  /* Hide by default */
+  font-size: 2rem;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+/* Dropdown menu for mobile - hidden by default */
+.dropdown-menu {
+  display: none;  /* Hidden by default */
+  position: absolute;
+  top: 60px;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  flex-direction: column;
+  padding: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Show the dropdown menu when it's open */
+.dropdown-menu.open {
+  display: flex;  /* Make it visible when the 'open' class is added */
+  background-color: #F9FAFB;
+}
+
+/* Media Query to target mobile devices */
+@media (max-width: 768px) {
+  /* Ensure header-center takes full width and centers the text */
+  .header-center {
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: visible; /* Make sure underline isn't clipped */
+  }
+
+  .header-center .header-address {
+    font-size: 1.8rem;
+    white-space: nowrap;
+    overflow: visible; /* Ensure underline is visible */
+    text-overflow: ellipsis;
+    position: relative; /* for ::after positioning */
+  }
+  
+  .header-right {
+    display: none;              /* Hide the right section on mobile */
+  }
+
+  .header-left {
+    display: flex;              /* Keep the left section (hamburger) visible */
+    align-items: center;        /* Vertically center the hamburger icon */
+    justify-content: flex-start; /* Keep it aligned to the left */
+    position: absolute;         /* Allow free positioning */
+    left: 10px;                 /* Ensure some space from the left edge */
+  }
+
+  /* Hide the desktop navigation links and show hamburger menu on mobile */
+  .desktop-links {
+    display: none;
+  }
+
+  /* Style for hamburger icon (Mobile only) */
+  .hamburger-icon {
+    display: block;             /* Ensure it's visible on mobile */
+    cursor: pointer;
+  }
+
+  /* Mobile dropdown menu setup */
+  .dropdown-menu {
+    display: none;              /* Hidden by default */
+  }
+
+  .dropdown-menu .nav-header-link {
+    padding: 0.75rem 1rem;
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: none;
+    font-size: 1rem;
+    color: #1a1a1a;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: 6px;
+  }
+
+  /* Hover effect */
+  .dropdown-menu .nav-header-link:active {
+    background-color: #f0f0f0;
+    color: #000;
+  }
+}
+
+.content-box {
+  background: rgba(255, 255, 255, 0.85); /* Light beige-white background */
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  margin: 2rem auto;
+  max-width: 1000px;
+}
+
+
+/* Main content */
+.main-content {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* this centers children horizontally */
+  overflow: hidden;
+}
+
+.highlight-hero {
+  width: 100vw;              /* Full viewport width */
+  max-width: 100%;           /* Prevents constraint */
+  padding: 4rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0;
+  box-sizing: border-box;    /* Includes padding in width */
+}
+
+
+.hero-content-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  gap: 2rem;
+  align-items: center;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.highlight-hero.reverse .hero-content-wrapper {
+  flex-direction: row-reverse;
+}
+
+.hero-text {
+  flex: 1;
+  min-width: 300px;
+  text-align: left;
+}
+
+.hero-text h1 {
+  font-size: 3.4rem;
+  font-weight: 700;
+  color: #2F2F2F;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+  position: relative; /* needed for ::after positioning */
+}
+
+.hero-text h1::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: #7ea5d3;
+  margin: 0.5rem;
+  border-radius: 2px;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  color: #535353;
+  margin-bottom: 1.5rem;
+}
+
+.hero-tour-button {
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  background-color: #012e61;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.hero-tour-button:hover {
+  background-color: #555555;
+}
+
+.hero-image {
+  flex: 1;
+  min-width: 300px;
+}
+
+.hero-image img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+/* ---------- Mobile Styles for Hero Section ---------- */
+@media (max-width: 768px) {
+  .highlight-hero {
+    padding: 2rem 1rem;
+    width: 100%;
+    max-width: 100%;
+    height: auto !important;       /* allow growth */
+    min-height: auto !important;
+    overflow: visible !important;  /* prevent clipping */
+    box-sizing: border-box;
+  }
+
+  .hero-content-wrapper {
+    display: flex;
+    flex-direction: column;        /* stack vertically */
+    align-items: center;           /* center children */
+    text-align: center;            /* center text */
+    width: 100%;
+    max-width: 100%;
+    height: auto !important;
+  }
+
+  .hero-image {
+    width: 100%;
+    margin-bottom: -1.5rem;
+  }
+
+  .hero-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    object-fit: contain;
+  }
+
+  .hero-text {
+    width: 100%;
+    padding: 0 1rem;
+  }
+
+  .hero-text h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+    margin-bottom: 0.75rem;
+    word-break: break-word;
+  }
+
+  /* 🔑 Underline matches alignment */
+  .hero-text h1::after {
+    content: "";
+    display: block;
+    width: 40px;
+    height: 3px;
+    margin: 0.5rem auto 0 auto;   /* keep centered */
+    background: #2c5ea8;
+  }
+
+  .hero-text p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-tour-button {
+    width: 100%;
+    max-width: 260px;
+    margin: 0 auto;
+    display: block;
+  }
+}
+
+/* Extra small devices (iPhone SE / 320px) */
+@media (max-width: 480px) {
+  .hero-text h1 {
+    font-size: 1.6rem;
+  }
+
+  .hero-text h1::after {
+    width: 30px;   /* scale underline with text */
+  }
+
+  .hero-text p {
+    font-size: 0.95rem;
+  }
+}
+
+
+
+
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+  z-index: 1000;
+  box-sizing: border-box;
+}
+
+.modal-content {
+  width: 80vw;          /* Take 80% of viewport width */
+  height: 80vh;         /* Take 80% of viewport height */
+  max-width: 1000px;    /* Optional: don’t get too huge on big screens */
+  max-height: 800px;    /* Optional */
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;     /* Ensures iframe fits nicely */
+  padding: 1rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.modal-image {
+  max-width: 100%;
+  max-height: 85vh;       /* Make image bigger vertically */
+  border-radius: 8px;
+  object-fit: contain;
+}
+
+.modal-caption {
+  margin-top: 0.7rem;
+  font-size: 1.3rem;
+  color: #333;
+}
+
+/* Close button */
+.modal-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  font-size: 2.8rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #555;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.modal-close:hover {
+  color: #000;
+}
+
+/* Prev / Next buttons */
+.modal-prev,
+.modal-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.85);
+  border: none;
+  font-size: 3rem;
+  padding: 0 14px;
+  cursor: pointer;
+  border-radius: 6px;
+  color: #222;
+  user-select: none;
+  transition: background-color 0.25s ease;
+}
+
+.modal-prev:hover,
+.modal-next:hover {
+  background: #ffffff;
+}
+
+.modal-prev {
+  left: 1rem;
+}
+
+.modal-next {
+  right: 1rem;
+}
+
+.modal-content iframe {
+  flex: 1;              /* Makes iframe stretch inside modal */
+  width: 100%;
+  height: 100%;
+}
+
+.modal-content h2 {
+  text-align: center;
+  margin: 0 0 1rem 0;  /* optional: tidy up spacing */
+  font-size: 1.5rem;   /* optional: make it stand out */
+}
