@@ -53,21 +53,42 @@ import furnished2Bed3 from './assets/Appartements/Cormier/2Bedroom/furnished2Bed
 import img36 from './assets/Appartements/Cormier/2Bedroom/Cormier_2Bedroom_17.jpg';
 
 // Icons
-import kitchenIcon from './assets/Icons/kitchen.svg';
-import lockIcon from './assets/Icons/security-camera.svg';
-import heatingIcon from './assets/Icons/heating-icon-19.jpg';
 import washerIcon from './assets/Icons/washer.png';
 import gymIcon from './assets/Icons/gymIcon.png';
-import electricityIcon from './assets/Icons/electricityIcon.png';
+import outdoorPoolIcon from './assets/Icons/outdoorPoolIcon.png';
+import bbq from './assets/Icons/bbq.png';
+import tennis from './assets/Icons/tennis.png';
+import dog from './assets/Icons/dog.png';
+import cinema from './assets/Icons/cinema.png';
 
 // Logo
-import rivieraLogo from './assets/Icons/Riviera-logo.png';
+import radissonLogo from './assets/Icons/Riviera-logo.png';
 
 // Amenities
 import pool from './assets/Amenities/pool1.png';
 
 // View
 import balconyview from './assets/Outside/view1.png';
+
+// Outside
+import rivieraImage1 from './assets/Outside/drone1.jpg';
+import rivieraImage2 from './assets/Outside/drone2.jpg';
+import rivieraImage3 from './assets/Outside/drone3.jpg';
+import cormierImage1 from './assets/Outside/cormier-outside3.jpg';
+import cormierImage2 from './assets/Outside/cormier-outside2.jpg';
+import pearsonImage1 from './assets/Outside/80-Pearson-10.jpg';
+import pearsonImage2 from './assets/Outside/80-Pearson-3.jpg';
+
+
+// Amenities
+import outdoorPoolImage from './assets/Amenities/pool1.png';
+import bbqImage from './assets/Amenities/BBQ.jpg';
+import tennisImage from './assets/Amenities/tennis.png';
+import gymImage from './assets/Amenities/gym1.jpg';
+import laundryImage from './assets/Amenities/laundry_room_2.jpg';
+import dogParkImage from './assets/Amenities/dogpark.png';
+import cinemaImage from './assets/Amenities/cinema1.jpg';
+
 
 
 const images = [
@@ -135,6 +156,8 @@ function Cormier() {
   // State for the discover cormier banner
   const [activeSlide, setActiveSlide] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [selectedAmenity, setSelectedAmenity] = useState(null);
+  const [viewMode, setViewMode] = useState("cards");
 
   const slides = [
     { image: furnishedStudio1, title: "Modern Living at Cormier" },
@@ -297,10 +320,10 @@ function Cormier() {
           style={{ cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '0.75rem' }}
         >
           <img
-            src={rivieraLogo}
+            src={radissonLogo}
             alt="Riviera Logo"
           />
-          <span>CORMIER</span>
+          <span>Radisson</span>
         </div>
       </div>
 
@@ -330,7 +353,6 @@ function Cormier() {
 
       {/* Main Content */}
       <main className="main-content">
-
         {/* Slideshow */}
         <section className="slideshow-section" aria-label="Building images slideshow">
           <div className="slideshow-container triple-display" role="region" aria-live="polite" style={{ position: 'relative' }}>
@@ -401,7 +423,7 @@ function Cormier() {
               <img src={images[1].src} alt="Beautiful unit at Cormier" />
             </div>
             <div className="hero-text">
-              <h1>Welcome To <br/>50 & 60 Cormier<br /></h1>
+              <h1>Welcome To <br/>Radisson Gardens<br /></h1>
               <p>Affordable Housing, Central Location, Total Comfort.</p>
               <button className="hero-tour-button" onClick={openModal}>
                 Book A Tour
@@ -429,14 +451,14 @@ function Cormier() {
             </div>
 
             <div className="about-text">
-              <h2>About Cormier</h2>
+              <h2>About Radisson</h2>
               <p>
-                Welcome to <strong>Cormier</strong>, a beautiful residence in Aylmer, Gatineau,  
+                Welcome to <strong>Radisson</strong>, a beautiful residence in Aylmer, Gatineau,  
                 just minutes from the Ottawa River and downtown Ottawa. Designed for comfort, it blends convenience with style  
                 to offer a high‑quality living experience.
               </p>
               <p>
-                At <strong>Cormier</strong>, recently renovated apartments provide welcoming spaces 
+                At <strong>Radisson</strong>, recently renovated apartments provide welcoming spaces 
                 where comfort and convenience come together for everyday living.
               </p>
               <ul className="about-features">
@@ -449,53 +471,178 @@ function Cormier() {
           </div>
         </section>
 
-        {/* Insert Features Cards Section right here */}
-        <section className="features-cards-section white-bg" data-aos="fade-down" data-aos-once="true" data-aos-duration="600" data-aos-easing="ease-in-out">
-          <h2>Live Better at Pearson</h2>
-          <div className="features-cards-container">
-            {/* Card 1: Hydro Included */}
-            <div className="feature-card">
-              <img src={electricityIcon} alt="WiFi icon" className="feature-icon" />
-              <h3>Electricity</h3>
-              <p>Electricity and water are included in your rent for added convenience.</p>
-            </div>
+        {/* Features Cards Section */}
+        <section 
+          className="features-cards-section white-bg" 
+          data-aos="fade-up" 
+          data-aos-once="true" 
+          data-aos-easing="ease-in-out"
+        >
+          {/* Section Title */}
+          <h2>Amenities Offered With Riviera</h2>
 
-            {/* Card 2: Kitchen Features */}
-            <div className="feature-card">
-              <img src={kitchenIcon} alt="Kitchen icon" className="feature-icon" />
-              <h3>Equipped Kitchen</h3>
-              <p>A kitchen equipped with a stove, fridge, and other essentials, designed for your convenience and comfort</p>
-            </div>
+          {/* Toggle Button */}
+          <div className="view-toggle">
+            <button onClick={() => setViewMode(viewMode === "cards" ? "photos" : "cards")}>
+              Switch to {viewMode === "cards" ? "Photo View" : "Card View"}
+            </button>
+          </div>
 
-            {/* Card 3: Secure Building */}
-            <div className="feature-card">
-              <img src={lockIcon} alt="Lock icon" className="feature-icon" />
-              <h3>24/7 Secure Access</h3>
-              <p>Feel safe with round-the-clock surveillance and secure entry systems for residents.</p>
-            </div>
+          {/* Conditional Rendering */}
+          {viewMode === "cards" ? (
+            <div className="features-cards-container">
+              {/* --- Your existing cards (no change) --- */}
 
-            {/* Card 4: Heating and Cooling */}
-            <div className="feature-card">
-              <img src={heatingIcon} alt="Heating/Cooling icon" className="feature-icon-heating" />
-              <h3>Heating</h3>
-              <p>Comfortable heating included for your convenience.</p>
-            </div>
+              {/* Card 1: Outdoor Pool */}
+              <div className="feature-card" onClick={() => setSelectedAmenity({ title: "Outdoor Pool", image: outdoorPoolImage })}>
+                <img src={outdoorPoolIcon} alt="Outdoor Pool icon" className="feature-icon" style={{ width: '140px', height: '140px', marginTop: '30px' }}/>
+                <h3>Outdoor Pool</h3>
+                <p>Enjoy a refreshing swim in our outdoor pool, perfect for relaxation and leisure.</p>
+              </div>
 
-            {/* Card 4: Gym */}
-            <div className="feature-card feature-card-medium">
-              <img src={gymIcon} alt="Gym icon" className="feature-icon" />
-              <h3>On-Site Gym</h3>
-              <p>Stay fit and active with our fully equipped on-site gym, available 24/7 for residents.</p>
-            </div>
+              {/* Card 2: BBQ Area */}
+              <div className="feature-card" onClick={() => setSelectedAmenity({ title: "BBQ Area", image: bbqImage })}>
+                <img src={bbq} alt="BBQ icon" className="feature-icon" style={{ width: '110px', height: '110px', marginTop: '40px' }} />
+                <h3>BBQ Area</h3>
+                <p>Enjoy outdoor cooking and dining with our BBQ facilities, perfect for gatherings.</p>
+              </div>
 
-            {/* Card 5: In-Unit Washer/Dryer */}
-            <div className="feature-card feature-card-medium">
-              <img src={washerIcon} alt="Washer/Dryer icon" className="feature-icon" />
-              <h3>Laundry Room</h3>
-              <p>Convenient on-site laundry with washers and dryers.</p>
+              {/* Card 4: Tennis Court */}
+              <div className="feature-card" onClick={() => setSelectedAmenity({ title: "Tennis Court", image: tennisImage })}>
+                <img src={tennis} alt="Tennis icon" className="feature-icon" style={{ width: '110px', height: '110px', marginTop: '40px' }} />
+                <h3>Tennis Court</h3>
+                <p>Enjoy a game of tennis on our outdoor court, designed for fun and fitness.</p>
+              </div>
+
+              {/* Card 5: Gym */}
+              <div className="feature-card feature-card-medium" onClick={() => setSelectedAmenity({ title: "Fitness Centre", image: gymImage })}>
+                <img src={gymIcon} alt="Gym icon" className="feature-icon" />
+                <h3>Fitness Centre</h3>
+                <p>Stay fit and active with our fully equipped on-site gym, available 24/7 for residents.</p>
+              </div>
+
+              {/* Card 6: Laundry */}
+              <div className="feature-card feature-card-medium" onClick={() => setSelectedAmenity({ title: "Laundry Room", image: laundryImage })}>
+                <img src={washerIcon} alt="Washer/Dryer icon" className="feature-icon" />
+                <h3>Laundry Room</h3>
+                <p>Convenient on-site laundry with modern washers and dryers.</p>
+              </div>
+
+              {/* Card 7: Dog Park */}
+              <div className="feature-card feature-card-medium" onClick={() => setSelectedAmenity({ title: "Dog Park", image: dogParkImage })}>
+                <img src={dog} alt="Dog icon" className="feature-icon" />
+                <h3>Dog Park</h3>
+                <p>Convenient on-site dog park for your furry friends to play and socialize.</p>
+              </div>
+
+              {/* Card 8: Cinema */}
+              <div className="feature-card feature-card-medium" onClick={() => setSelectedAmenity({ title: "Cinema Room", image: cinemaImage })}>
+                <img src={cinema} alt="Cinema icon" className="feature-icon" style={{ width: '150px', height: '150px'}}/>
+                <h3>Cinema Room</h3>
+                <p>Enjoy movie nights in our cozy cinema room, complete with comfortable seating and a large screen.</p>
+              </div>
+            </div>
+          ) : (
+            <div className="features-photos-container">
+              {/* Photo View */}
+              <div className="feature-photo-item" onClick={() => setSelectedAmenity({ title: "Outdoor Pool", image: outdoorPoolImage })}>
+                <img src={outdoorPoolImage} alt="Outdoor Pool" className="feature-photo"/>
+                <p className="photo-caption">Outdoor Pool</p>
+              </div>
+
+              <div className="feature-photo-item" onClick={() => setSelectedAmenity({ title: "BBQ Area", image: bbqImage })}>
+                <img src={bbqImage} alt="BBQ Area" className="feature-photo"/>
+                <p className="photo-caption">BBQ Area</p>
+              </div>
+
+              <div className="feature-photo-item" onClick={() => setSelectedAmenity({ title: "Tennis Court", image: tennisImage })}>
+                <img src={tennisImage} alt="Tennis Court" className="feature-photo"/>
+                <p className="photo-caption">Tennis Court</p>
+              </div>
+
+              <div className="feature-photo-item" onClick={() => setSelectedAmenity({ title: "Fitness Centre", image: gymImage })}>
+                <img src={gymImage} alt="Fitness Centre" className="feature-photo"/>
+                <p className="photo-caption">Fitness Centre</p>
+              </div>
+
+              <div className="feature-photo-item" onClick={() => setSelectedAmenity({ title: "Laundry Room", image: laundryImage })}>
+                <img src={laundryImage} alt="Laundry Room" className="feature-photo"/>
+                <p className="photo-caption">Laundry Room</p>
+              </div>
+
+              <div className="feature-photo-item" onClick={() => setSelectedAmenity({ title: "Dog Park", image: dogParkImage })}>
+                <img src={dogParkImage} alt="Dog Park" className="feature-photo"/>
+                <p className="photo-caption">Dog Park</p>
+              </div>
+
+              <div className="feature-photo-item" onClick={() => setSelectedAmenity({ title: "Cinema Room", image: cinemaImage })}>
+                <img src={cinemaImage} alt="Cinema Room" className="feature-photo"/>
+                <p className="photo-caption">Cinema Room</p>
+              </div>
+            </div>
+          )}
+        </section>
+
+        {/* Modal */}
+        {selectedAmenity && (
+          <div 
+            className="modal-overlay" 
+            onClick={() => setSelectedAmenity(null)} 
+            style={{
+              position: 'fixed', 
+              top: 0, left: 0, 
+              width: '100%', height: '100%',
+              background: 'rgba(0,0,0,0.9)', 
+              display: 'flex', 
+              justifyContent: 'center',
+              alignItems: 'center', 
+              zIndex: 9999
+            }}
+          >
+            {/* Close Button in top-right of overlay */}
+            <button 
+              onClick={() => setSelectedAmenity(null)} 
+              style={{
+                position: 'absolute',
+                top: '20px',
+                right: '30px',
+                background: 'transparent',
+                border: 'none',
+                fontSize: '2.5rem',
+                color: '#fff',
+                cursor: 'pointer',
+                zIndex: 10000
+              }}
+              aria-label="Close"
+            >
+              &times;
+            </button>
+
+            {/* Stop click bubbling on image */}
+            <div 
+              style={{ 
+                maxWidth: '70%', 
+                maxHeight: '80%', 
+                display: 'flex', 
+                justifyContent: 'center', 
+                alignItems: 'center'
+              }} 
+              onClick={(e) => e.stopPropagation()}
+            >
+              <img 
+                src={selectedAmenity.image} 
+                alt={selectedAmenity.title} 
+                style={{ 
+                  maxWidth: '100%', 
+                  maxHeight: '100%', 
+                  borderRadius: '10px',
+                  objectFit: 'contain',
+                  boxShadow: '0 0 20px rgba(0,0,0,0.5)'
+                }} 
+              />
             </div>
           </div>
-        </section>
+        )}
 
         {/* Amenities Pool Highlight Section */}
         <section
@@ -586,15 +733,15 @@ function Cormier() {
             <div className="modern-location-text">
               <h2>Discover the Neighborhood</h2>
               <p>
-                Nestled in Aylmer, Gatineau, <strong>Cormier</strong> offers easy access to the <b>Ottawa River</b> and is just minutes from <b>downtown Ottawa</b>.  
+                Nestled in Aylmer, Gatineau, <strong>Radisson</strong> offers easy access to the <b>Ottawa River</b> and is just minutes from <b>downtown Ottawa</b>.  
                 Surrounded by cafés, restaurants, and shops, daily conveniences are always within reach, and the <b>University of Ottawa</b> is only a 20‑minute drive away.  
-                Cormier is where comfort, convenience, and location come together.
+                Radisson is where comfort, convenience, and location come together.
               </p>
             </div>
             <div className="modern-location-map">
               <iframe
                 title="Cormier Map"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2801.2978998192875!2d-75.85497622339608!3d45.40333203749745!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cce01f8afa357a5%3A0x75f0e3bc46daf141!2s50%20Rue%20Cormier%2C%20Gatineau%2C%20QC%20J9H%206C9!5e0!3m2!1sen!2sca!4v1753815041755!5m2!1sen!2sca"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2889.091340365991!2d-75.74718305774705!3d45.46457820766836!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cce034c75804c17%3A0x826bb9c3eae0c0db!2sLes%20Jardins%20Radisson!5e1!3m2!1sen!2sca!4v1754573492201!5m2!1sen!2sca"
                 loading="lazy"
                 allowFullScreen
               />
@@ -682,7 +829,7 @@ function Cormier() {
 
       {/* Footer */}
       <footer className="footer lightgray-bg">
-        <p>© 2025 Cormier. All rights reserved.</p>
+        <p>© 2025 Radisson. All rights reserved.</p>
       </footer>
     </>
   );

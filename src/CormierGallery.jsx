@@ -54,7 +54,7 @@ import img36 from './assets/Appartements/Cormier/2Bedroom/Cormier_2Bedroom_17.jp
 
 
 // Logo
-import rivieraLogo from './assets/Icons/Riviera-logo.png';
+import radissonLogo from './assets/Icons/Riviera-logo.png';
 
 const images = [
   { type: 'Studio', before: img1, after: furnishedStudio1, captionBefore: "Studio: Living Area Unfurnished", captionAfter: "Living Area Furnished"},
@@ -127,7 +127,7 @@ function PhotoHeader() {
             style={{ cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '0.75rem' }}
           >
             <img
-              src={rivieraLogo}
+              src={radissonLogo}
               alt="Riviera Logo"
             />
             <span>CORMIER</span>
