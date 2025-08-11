@@ -1,20 +1,22 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import Home from './Home';
-import Cormier from './Cormier';
-import CormierGallery from './CormierGallery';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Radisson from './Radisson';
+import RadissonFr from './RadissonFr';
+import RadissonGallery from './RadissonGallery';
+import RadissonGalleryFr from './RadissonGalleryFr';
+
 
 function App() {
   return (
     <Router>
       <Routes>
-        {/* Redirect root path "/" to "/home" */}
-        <Route path="/" element={<Navigate to="/home" replace />} />
+        {/* Load Radisson on root path "/" */}
+        <Route path="/" element={<Radisson />} />
+        <Route path="/fr" element={<RadissonFr />} />
 
-        {/* Your actual pages */}
-        <Route path="/home" element={<Home />} />
-        <Route path="/cormier" element={<Cormier />} />
-        <Route path="/cormier/photos" element={<CormierGallery />} />
+        {/* Gallery page */}
+        <Route path="/gallery" element={<RadissonGallery />} />
+        <Route path="/gallery/fr" element={<RadissonGalleryFr />} />
       </Routes>
     </Router>
   );

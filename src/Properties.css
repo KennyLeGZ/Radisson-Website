@@ -240,7 +240,7 @@
   font-weight: 700;
   margin-bottom: 1.5rem;
   color: #333333;
-  border-left: 5px solid #7ea5d3;
+  border-left: 5px solid #50c522;
   padding-left: 1rem;
   letter-spacing: 0.02em;
 }
@@ -275,7 +275,7 @@
   content: "✔";
   position: absolute;
   left: 0;
-  color: #7ea5d3;
+  color: #50c522;
   font-weight: 900;
   font-size: 1.2rem;
   line-height: 1;
@@ -346,15 +346,13 @@
 }
 
 .features-cards-section h2 {
+  font-family: 'Inter', sans-serif;
   font-size: 3.2rem;
   font-weight: 700;
+  margin-bottom: 2rem;
   color: #333333;
-  margin-bottom: 1rem;
-  line-height: 1.2;
-  position: realtive;
   text-align: center;
-  padding-bottom: 0.5rem;
-  text-transform: capitalize;
+  line-height: 1.2;
 }
 
 .features-cards-section h2::after {
@@ -362,7 +360,7 @@
   display: block;
   width: 60px;
   height: 4px;
-  background: #7ea5d3;
+  background: #50c522;
   margin: 0.5rem auto 0 auto; /* top margin, no side margins */
   border-radius: 2px;
   /* aligned left by default */
@@ -379,7 +377,7 @@
 
 /* Each feature card */
 .feature-card {
-  flex: 1 1 calc(25% - 1.5rem); /* 4 cards per row minus gap */
+  flex: 1 1 calc(33% - 1.5rem); /* 3 cards per row minus gap */
   background-color: #fff;
   border-radius: 12px;
   padding: 1rem;
@@ -403,15 +401,7 @@
 
 .feature-icon {
   margin-top: 3.5rem;
-  width: 90px;  /* bigger width */
-  height: 90px; /* bigger height */
-  margin-bottom: 0 rem;
-  display: block;
-}
-
-.feature-icon-heating {
-  margin-top: 3.5rem;
-  width: 110px;  /* bigger width */
+  width: 100px;  /* bigger width */
   height: 100px; /* bigger height */
   margin-bottom: 0 rem;
   display: block;
@@ -447,19 +437,165 @@
   margin-bottom: 1.2rem;
 }
 
+.view-toggle {
+  margin: 15px 0 25px 0;
+  text-align: center;
+}
+
+.view-toggle button {
+  padding: 0.6rem 1.8rem;        /* match pill switch size */
+  border: none;
+  background-color: #0b6b30;     /* your dark blue */
+  color: #fff;                   /* white text */
+  font-weight: 600;              /* bold like property-switch */
+  border-radius: 999px;          /* full pill shape */
+  font-size: 1rem;               /* match property-switch font */
+  cursor: pointer;
+  transition: background-color 0.25s ease, transform 0.2s ease;
+}
+
+.view-toggle button:hover {
+  background-color: #45b16c;     /* hover blue */
+  transform: scale(1.05);        /* subtle hover grow */
+}
+
+
+.features-photos-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* always 2 columns */
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.feature-photo {
+  width: 100%;
+  height: 550px; /* bigger height for immersive feel */
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.15);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.feature-photo:hover {
+  transform: scale(1.05);
+}
+
+.feature-photo-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.photo-caption {
+  margin-top: 8px;
+  font-size: 1.1rem;        /* same as normal text */
+  font-weight: normal;    /* match paragraph weight */
+  color: inherit;         /* inherit color from parent/global */
+  font-family: 'Inter', Tahoma, Geneva, Verdana, sans-serif;   /* use the same font as the rest */
+}
+
+/* ---------- Mobile Styles for Features Cards Section ---------- */
 @media (max-width: 768px) {
+  .features-cards-section {
+    padding-top: 3rem;
+    padding-bottom: 4rem;
+  }
+
+  .features-cards-section h2 {
+    font-size: 2.5rem !important;       /* smaller heading */
+    margin-bottom: 1rem;
+  }
+
+  .features-cards-section h2::after {
+    width: 40px;
+    height: 3px;
+  }
+
+  /* Cards stack vertically */
   .features-cards-container {
-    flex-direction: column; /* stack cards vertically */
-    gap: 1.5rem;            /* space between cards */
-    padding: 0 1rem;        /* some padding on sides */
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
   }
 
   .feature-card {
-    flex: none;             /* disable flex grow/shrink */
-    width: 100%;            /* full width of container */
-    min-width: auto;        /* prevent min-width issues */
-    max-width: 100%;        /* make sure it doesn’t exceed container */
-    box-sizing: border-box; /* include padding/border in width */
+    flex: 1 1 100%;
+    min-width: auto;
+    max-width: 90%;          /* prevent edge-to-edge */
+    padding: 1rem;
+    min-height: 250px;       /* smaller cards */
+  }
+
+  .feature-card-medium .feature-icon {
+    width: 90px;
+    height: 90px;
+  }
+
+  .feature-icon {
+    margin-top: 2rem;
+    width: 70px;
+    height: 70px;
+  }
+
+  .feature-card h3 {
+    font-size: 1.1rem;
+    margin-top: 1rem;
+  }
+
+  .feature-card p {
+    font-size: 0.95rem;
+    margin-top: 0.8rem;
+    margin-bottom: 1rem;
+  }
+
+  /* Photos container switches to 1 column */
+  .features-photos-container {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .feature-photo {
+    height: 250px;           /* shorter images for mobile */
+  }
+
+  .photo-caption {
+    font-size: 0.9rem;
+  }
+
+  .view-toggle button {
+    font-size: 0.9rem;
+    padding: 0.5rem 1.4rem;
+  }
+}
+
+/* Extra small phones */
+@media (max-width: 480px) {
+  .features-cards-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .feature-card {
+    max-width: 95%;
+    padding: 0.9rem;
+    min-height: 220px;
+  }
+
+  .feature-card h3 {
+    font-size: 1rem;
+  }
+
+  .feature-card p {
+    font-size: 0.9rem;
+  }
+
+  .feature-photo {
+    height: 200px;
+  }
+
+  .photo-caption {
+    font-size: 0.85rem;
   }
 }
 
@@ -536,7 +672,7 @@
   display: block;
   width: 60px;
   height: 4px;
-  background: #7ea5d3;
+  background: #50c522;
   margin: 0.5rem auto 0 auto;
   border-radius: 2px;
 }
@@ -655,17 +791,17 @@
   display: block;
   width: 60px;
   height: 4px;
-  background: #7ea5d3;
+  background: #50c522;
   margin: 0.5rem auto 0 auto;
   border-radius: 2px;
 }
 
 
 .units-card-container {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 equal-width columns */
   gap: 2rem;
-  flex-wrap: wrap;
-  justify-content: center;
+  justify-items: center;
   padding: 2rem 1rem;
 }
 
@@ -749,8 +885,7 @@
   }
 
   .units-card-container {
-    gap: 1.5rem;
-    padding: 1rem 0.5rem;
+    grid-template-columns: repeat(1, 1fr);
   }
 
   .unit-type-card {
@@ -808,7 +943,7 @@
   content: "";
   width: 60px;
   height: 4px;
-  background-color: #7ea5d3;
+  background-color: #50c522;
   display: block;
   margin-top: 0.5rem;
   border-radius: 2px;
@@ -856,7 +991,7 @@
   }
 
   .modern-location-text h2 {
-    font-size: 2.8rem;
+    font-size: 2.rem;
     text-align: center;
   }
 
@@ -901,7 +1036,7 @@
   display: block;
   width: 60px;
   height: 4px;
-  background: #7ea5d3;
+  background: #50c522;
   margin: 1rem auto 0;
   border-radius: 2px;
 }
@@ -1089,3 +1224,4 @@
     max-width: 100%;
   }
 }
+

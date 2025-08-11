@@ -88,7 +88,7 @@ html, body, #root, app-container {
 
 .header-address img {
   height: 70px; /* Increase this value to make logo bigger */
-  width: 50px;
+  width: 70px;
 }
 
 .header-buttons {
@@ -145,6 +145,35 @@ html, body, #root, app-container {
   outline: none;
   box-shadow: 0 0 0 3px rgba(123, 102, 81, 0.3); /* soft brown focus ring */
 }
+
+.contact-wrapper {
+  position: relative;
+  display: inline-block; /* Ensures dropdown aligns to button width */
+}
+
+.contact-dropdown {
+  position: absolute;
+  top: 100%; /* Immediately below the button */
+  left: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 12px;
+  margin-top: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  width: max-content;
+}
+
+.email-link {
+  background: none;
+  border: none;
+  color: #007bff;
+  cursor: pointer;
+  text-decoration: underline;
+  font-size: inherit;
+  padding: 0;
+}
+
 
 /* Desktop links and buttons - hidden on mobile */
 .desktop-links, .desktop-buttons {
@@ -248,6 +277,11 @@ html, body, #root, app-container {
     background-color: #f0f0f0;
     color: #000;
   }
+
+  .header-address img {
+    height: 50px; /* Increase this value to make logo bigger */
+    width: 50px;
+  }
 }
 
 .content-box {
@@ -316,7 +350,7 @@ html, body, #root, app-container {
   display: block;
   width: 60px;
   height: 4px;
-  background: #7ea5d3;
+  background: #50c522;
   margin: 0.5rem;
   border-radius: 2px;
 }
@@ -330,7 +364,7 @@ html, body, #root, app-container {
 .hero-tour-button {
   padding: 0.8rem 1.5rem;
   font-size: 1rem;
-  background-color: #012e61;
+  background-color: #0b6b30;
   color: white;
   border: none;
   border-radius: 8px;
@@ -339,7 +373,7 @@ html, body, #root, app-container {
 }
 
 .hero-tour-button:hover {
-  background-color: #555555;
+  background-color: #45b16c;
 }
 
 .hero-image {
