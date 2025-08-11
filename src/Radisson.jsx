@@ -164,7 +164,7 @@ function Radisson() {
   const slides = [
     { image: outside1, title: "Building View: Radisson" },
     { image: furnished1Bed1, title: "Spacious & Bright Interiors" },
-    { image: furnished1Bed2, title: "Prime Location in Montreal" },
+    { image: furnished1Bed2, title: "Prime Location in Gatineau" },
     { image: furnished2Bed1, title: "Designed for Comfort" },
     { image: furnishedStudio1, title: "Modern Living at Radisson" },
   ];
@@ -315,9 +315,9 @@ function Radisson() {
       <div className="header-left">
         {/* Desktop links */}
         <div className="desktop-links">
-          <button className="nav-header-link" onClick={() => scrollToRef(aboutRef1, -200)}>About</button>
+          <button className="nav-header-link" onClick={() => scrollToRef(aboutRef1)}>About</button>
           <button className="nav-header-link" onClick={() => navigate('/gallery')}>Gallery</button>
-          <button className="nav-header-link" onClick={() => scrollToRef(unitsRef1, -150)}>Available Units</button>
+          <button className="nav-header-link" onClick={() => scrollToRef(unitsRef1)}>Available Units</button>
         </div>
         
         {/* Hamburger Icon for Mobile */}
@@ -367,9 +367,9 @@ function Radisson() {
 
       {/* Mobile Dropdown Menu */}
       <div className={`dropdown-menu ${isMenuOpen ? 'open' : ''}`}>
-        <button className="nav-header-link" onClick={() => scrollToRef(aboutRef1, -200)}>About</button>
+        <button className="nav-header-link" onClick={() => scrollToRef(aboutRef1)}>About</button>
         <button className="nav-header-link" onClick={() => navigate('/gallery')}>Gallery</button>
-        <button className="nav-header-link" onClick={() => scrollToRef(unitsRef1, -220)}>Available Units</button>
+        <button className="nav-header-link" onClick={() => scrollToRef(unitsRef1)}>Available Units</button>
         {/* Mobile contact toggle lives INSIDE the mobile menu */}
         <button
           className="nav-header-link"
@@ -509,7 +509,7 @@ function Radisson() {
               </p>
               <ul className="about-features">
                 <li>Affordable and comfortable apartments</li>
-                <li>Prime location near Downtown Ottawa and key OC Transpo lines</li>
+                <li>Prime location in Gatineau, just minutes from Downtown Ottawa and key OC Transpo lines</li>
                 <li>Spacious layouts with water, heat, AC, sewer, and trash removal included</li>
                 <li>Pet-friendly community</li>
               </ul>
@@ -757,7 +757,7 @@ function Radisson() {
             <div className="modern-location-text">
               <h2>Discover The Area</h2>
               <p>
-                Located in Gatineau’s west end, <strong>Radisson Apartments</strong> offers quick access to the <b>Ottawa River</b>  
+                Located in Gatineau’s west end, <strong>Radisson Apartments</strong> offers quick access to the <b>Ottawa River </b>  
                 and is just minutes from <b>downtown Ottawa</b>. With cafés, restaurants, and shops nearby,  
                 daily essentials are always close at hand. The <b>University of Ottawa</b> is also within a 15-minute drive,  
                 making Radisson a perfect blend of comfort, convenience, and location.

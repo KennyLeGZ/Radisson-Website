@@ -65,63 +65,63 @@ import furnished4Bed1 from './assets/Apartments/4Bed/furnished4Bed1.png';
 import radissonLogo from './assets/Icons/Radisson-logo.png';
 
 const images = [
-  // 1 Bedroom
-  { type: '1 Bedroom', before: img1, after: furnished1Bed1, captionBefore: "1 Bed: Living Area View 1", captionAfter: "1 Bed: Living Area Furnished" },
-  { type: '1 Bedroom', before: img2, after: furnished1Bed2, captionBefore: "1 Bed: Bedroom View 1", captionAfter: "1 Bed: Bedroom Furnished" },
-  { type: '1 Bedroom', before: img2, captionBefore: "1 Bed: Bedroom View 1" },
-  { type: '1 Bedroom', before: img3, captionBefore: "1 Bed: Bedroom View 2" },
-  { type: '1 Bedroom', before: img4, captionBefore: "1 Bed: Bedroom View 3" },
-  { type: '1 Bedroom', before: img5, captionBefore: "1 Bed: Hallway View 1" },
-  { type: '1 Bedroom', before: img6, captionBefore: "1 Bed: Hallway View 2" },
-  { type: '1 Bedroom', before: img7, captionBefore: "1 Bed: Bedroom View 1" },
-  { type: '1 Bedroom', before: img8, captionBefore: "1 Bed: Kitchen View 1" },
-  { type: '1 Bedroom', before: img9, captionBefore: "1 Bed: Kitchen View 2" },
-  { type: '1 Bedroom', before: img10, captionBefore: "1 Bed: Kitchen View 3" },
-  { type: '1 Bedroom', before: img11, captionBefore: "1 Bed: Bathroom" },
+  // 1 Chambre
+  { type: '1 Chambre', before: img1, after: furnished1Bed1, captionBefore: "1 Ch: Vue Du Salon 1", captionAfter: "1 Ch.: Salon Meublé" },
+  { type: '1 Chambre', before: img2, after: furnished1Bed2, captionBefore: "1 Ch: Vue De La Chambre 1", captionAfter: "1 Ch.: Chambre Meublée" },
+  { type: '1 Chambre', before: img3, captionBefore: "1 Ch: Vue De La Chambre 2" },
+  { type: '1 Chambre', before: img4, captionBefore: "1 Ch: Vue De La Chambre 3" },
+  { type: '1 Chambre', before: img5, captionBefore: "1 Ch: Vue Du Couloir 1" },
+  { type: '1 Chambre', before: img6, captionBefore: "1 Ch: Vue Du Couloir 2" },
+  { type: '1 Chambre', before: img7, captionBefore: "1 Ch: Vue De La Chambre 1" },
+  { type: '1 Chambre', before: img8, captionBefore: "1 Ch: Vue De La Cuisine 1" },
+  { type: '1 Chambre', before: img9, captionBefore: "1 Ch: Vue De La Cuisine 2" },
+  { type: '1 Chambre', before: img10, captionBefore: "1 Ch: Vue De La Cuisine 3" },
+  { type: '1 Chambre', before: img11, captionBefore: "1 Ch: Salle De Bain" },
 
-  // 2 Bedroom
-  { type: '2 Bedroom', before: img12, after: furnished2Bed2, captionBefore: "2 Bed: Living Area View 1", captionAfter: "2 Bed: Living Area Furnished" },
-  { type: '2 Bedroom', before: img13, captionBefore: "2 Bed: Living Area View 2" },
-  { type: '2 Bedroom', before: img14, after: furnished2Bed1, captionBefore: "2 Bed: 1st Bedroom View 1", captionAfter: "2 Bed: Bedroom Furnished" },
-  { type: '2 Bedroom', before: img15, captionBefore: "2 Bed: 1st Bedroom View 2" },
-  { type: '2 Bedroom', before: img16, captionBefore: "2 Bed: 2nd Bedroom View 1" },
-  { type: '2 Bedroom', before: img17, captionBefore: "2 Bed: 2nd Bedroom View 2" },
-  { type: '2 Bedroom', before: img18, captionBefore: "2 Bed: Kitchen View 1" },
-  { type: '2 Bedroom', before: img19, captionBefore: "2 Bed: Kitchen View 2" },
-  { type: '2 Bedroom', before: img20, captionBefore: "2 Bed: Balcony View 1" },
-  { type: '2 Bedroom', before: img21, captionBefore: "2 Bed: Balcony View 2" },
-  { type: '2 Bedroom', before: img22, captionBefore: "2 Bed: Balcony View 3" },
-  { type: '2 Bedroom', before: img23, captionBefore: "2 Bed: Balcony View 4" },
-  { type: '2 Bedroom', before: img24, captionBefore: "2 Bed: Hallway" },
-  { type: '2 Bedroom', before: img25, captionBefore: "2 Bed: Bathroom" },
+  // 2 Chambres
+  { type: '2 Chambres', before: img12, after: furnished2Bed2, captionBefore: "2 Ch: Vue Du Salon 1", captionAfter: "2 Ch.: Salon Meublé" },
+  { type: '2 Chambres', before: img13, captionBefore: "2 Ch: Vue Du Salon 2" },
+  { type: '2 Chambres', before: img14, after: furnished2Bed1, captionBefore: "2 Ch: Vue De La 1ère Chambre 1", captionAfter: "2 Ch.: Chambre Meublée" },
+  { type: '2 Chambres', before: img15, captionBefore: "2 Ch: Vue De La 1ère Chambre 2" },
+  { type: '2 Chambres', before: img16, captionBefore: "2 Ch: Vue De La 2ème Chambre 1" },
+  { type: '2 Chambres', before: img17, captionBefore: "2 Ch: Vue De La 2ème Chambre 2" },
+  { type: '2 Chambres', before: img18, captionBefore: "2 Ch: Vue De La Cuisine 1" },
+  { type: '2 Chambres', before: img19, captionBefore: "2 Ch: Vue De La Cuisine 2" },
+  { type: '2 Chambres', before: img20, captionBefore: "2 Ch: Vue Du Balcon 1" },
+  { type: '2 Chambres', before: img21, captionBefore: "2 Ch: Vue Du Balcon 2" },
+  { type: '2 Chambres', before: img22, captionBefore: "2 Ch: Vue Du Balcon 3" },
+  { type: '2 Chambres', before: img23, captionBefore: "2 Ch: Vue Du Balcon 4" },
+  { type: '2 Chambres', before: img24, captionBefore: "2 Ch: Couloir" },
+  { type: '2 Chambres', before: img25, captionBefore: "2 Ch: Salle De Bain" },
 
-  // 3 Bedroom
-  { type: '3 Bedroom', before: img26, after: furnished3Bed1, captionBefore: "3 Bed: Living Area View 1", captionAfter: "2 Bed: Living Area Furnished" },
-  { type: '3 Bedroom', before: img27, captionBefore: "3 Bed: Living Area View 2" },
-  { type: '3 Bedroom', before: img28, after: furnished3Bed2, captionBefore: "3 Bed: 1st Bedroom View 1", captionAfter: "2 Bed: Bedroom Furnished" },
-  { type: '3 Bedroom', before: img29, captionBefore: "3 Bed: 1st Bedroom View 2" },
-  { type: '3 Bedroom', before: img30, captionBefore: "3 Bed: 1st Bedroom View 3" },
-  { type: '3 Bedroom', before: img31, captionBefore: "3 Bed: 2nd Bedroom View 1" },
-  { type: '3 Bedroom', before: img32, captionBefore: "3 Bed: 2nd Bedroom View 2" },
-  { type: '3 Bedroom', before: img33, captionBefore: "3 Bed: 3rd Bedroom View 1" },
-  { type: '3 Bedroom', before: img34, captionBefore: "3 Bed: 3rd Bedroom View 2" },
-  { type: '3 Bedroom', before: img35, captionBefore: "3 Bed: Kitchen View 1" },
-  { type: '3 Bedroom', before: img36, captionBefore: "3 Bed: Kitchen View 2" },
-  { type: '3 Bedroom', before: img37, captionBefore: "3 Bed: Balcony View 1" },
-  { type: '3 Bedroom', before: img38, captionBefore: "3 Bed: Balcony View 2" },
+  // 3 Chambres
+  { type: '3 Chambres', before: img26, after: furnished3Bed1, captionBefore: "3 Ch: Vue Du Salon 1", captionAfter: "3 Ch.: Salon Meublé" },
+  { type: '3 Chambres', before: img27, captionBefore: "3 Ch: Vue Du Salon 2" },
+  { type: '3 Chambres', before: img28, after: furnished3Bed2, captionBefore: "3 Ch.: Vue De La 1ère Chambre 1", captionAfter: "3 Ch.: Chambre Meublée" },
+  { type: '3 Chambres', before: img29, captionBefore: "3 Ch: Vue De La 1ère Chambre 2" },
+  { type: '3 Chambres', before: img30, captionBefore: "3 Ch: Vue De La 1ère Chambre 3" },
+  { type: '3 Chambres', before: img31, captionBefore: "3 Ch: Vue De La 2ème Chambre 1" },
+  { type: '3 Chambres', before: img32, captionBefore: "3 Ch: Vue De La 2ème Chambre 2" },
+  { type: '3 Chambres', before: img33, captionBefore: "3 Ch: Vue De La 3ème Chambre 1" },
+  { type: '3 Chambres', before: img34, captionBefore: "3 Ch: Vue De La 3ème Chambre 2" },
+  { type: '3 Chambres', before: img35, captionBefore: "3 Ch: Vue De La Cuisine 1" },
+  { type: '3 Chambres', before: img36, captionBefore: "3 Ch: Vue De La Cuisine 2" },
+  { type: '3 Chambres', before: img37, captionBefore: "3 Ch: Vue Du Balcon 1" },
+  { type: '3 Chambres', before: img38, captionBefore: "3 Ch: Vue Du Balcon 2" },
 
   // Studio
-  { type: 'Studio', before: furnishedStudio1, captionBefore: "Studio: Living Area Unfurnished", captionAfter: "Living Area Furnished" },
+  { type: 'Studio', before: furnishedStudio1, captionBefore: "Studio: Salon Non Meublé", captionAfter: "Studio: Salon Meublé" },
 
-  // 4 Bedroom
-  { type: '4 Bedroom', before: furnished4Bed1, captionBefore: "4 Bed: Bedroom" }
+  // 4 Chambres
+  { type: '4 Chambres', before: furnished4Bed1, captionBefore: "4 Ch: Chambre" }
 ];
+
 
 
 
 function PhotoHeader() {
   const navigate = useNavigate();
-  const goToFrenchPhotos = () => navigate('/gallery/fr');
+  const goToEnglishPhotos = () => navigate('/gallery');
   const [showModal, setShowModal] = useState(false);
 
   // Contact Leasing Agent Section
@@ -148,9 +148,9 @@ function PhotoHeader() {
             className="back-arrow"
             aria-label="Back to homepage"
             role="button"
-            onClick={() => navigate('/')}
+            onClick={() => navigate('/fr')}
             tabIndex={0}
-            onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') navigate('/'); }}
+            onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') navigate('/fr'); }}
           >
             ←
           </span>
@@ -163,7 +163,7 @@ function PhotoHeader() {
           >
             <img
               src={radissonLogo}
-              alt="Riviera Logo"
+              alt="Radisson Logo"
             />
             <span>RADISSON</span>
           </div>
@@ -187,9 +187,9 @@ function PhotoHeader() {
             )}
           </div>
           <button className="nav-header-link nav-header-btn" onClick={() => setShowModal(true)}>
-            Book A Tour
+            Réserver Une Visite
           </button>
-          <button className="nav-header-link nav-header-btn" onClick={goToFrenchPhotos}>FR</button>
+          <button className="nav-header-link nav-header-btn" onClick={goToEnglishPhotos}>EN</button>
         </div>
       </header>
 
@@ -223,9 +223,9 @@ function RadissonGallery() {
   }, []);
 
   const slides = [
-    { image: furnished2Bed1, title: "Photo Gallery" },
+    { image: furnished2Bed1, title: "Galerie Photo" },
     { image: furnished2Bed2, title: "2-10 Radisson" },
-    { image: furnished3Bed1, title: "Affordable Living" },
+    { image: furnished3Bed1, title: "Vie Abordable" },
   ];
 
   const nextSlide = () => {
@@ -255,10 +255,10 @@ function RadissonGallery() {
   }, [isTransitioning]);
 
   const groupedPhotos = {
-    '1 Bedroom': images.filter(photo => photo.type === '1 Bedroom'),
-    '2 Bedroom': images.filter(photo => photo.type === '2 Bedroom'),
-    '3 Bedroom': images.filter(photo => photo.type === '3 Bedroom'),
-    '4 Bedroom': images.filter(photo => photo.type === '4 Bedroom'),
+    '1 Chambre': images.filter(photo => photo.type === '1 Chambre'),
+    '2 Chambres': images.filter(photo => photo.type === '2 Chambres'),
+    '3 Chambres': images.filter(photo => photo.type === '3 Chambres'),
+    '4 Chambres': images.filter(photo => photo.type === '4 Chambres'),
     'Studio': images.filter(photo => photo.type === 'Studio'),
   };
 
@@ -318,10 +318,10 @@ function RadissonGallery() {
         {/* Filter Panel */}
         <div className="filter-panel">
           <button className={filter === 'all' ? 'filter-btn active' : 'filter-btn'} onClick={() => setFilter('all')}>All</button>
-          <button className={filter === '1 Bedroom' ? 'filter-btn active' : 'filter-btn'} onClick={() => setFilter('1 Bedroom')}>1 Bedroom</button>
-          <button className={filter === '2 Bedroom' ? 'filter-btn active' : 'filter-btn'} onClick={() => setFilter('2 Bedroom')}>2 Bedroom</button>
-          <button className={filter === '3 Bedroom' ? 'filter-btn active' : 'filter-btn'} onClick={() => setFilter('3 Bedroom')}>3 Bedroom</button>
-          <button className={filter === '4 Bedroom' ? 'filter-btn active' : 'filter-btn'} onClick={() => setFilter('4 Bedroom')}>4 Bedroom</button>
+          <button className={filter === '1 Chambre' ? 'filter-btn active' : 'filter-btn'} onClick={() => setFilter('1 Chambre')}>1 Chambre</button>
+          <button className={filter === '2 Chambres' ? 'filter-btn active' : 'filter-btn'} onClick={() => setFilter('2 Chambres')}>2 Chambres</button>
+          <button className={filter === '3 Chambres' ? 'filter-btn active' : 'filter-btn'} onClick={() => setFilter('3 Chambres')}>3 Chambres</button>
+          <button className={filter === '4 Chambres' ? 'filter-btn active' : 'filter-btn'} onClick={() => setFilter('4 Chambres')}>4 Chambres</button>
           <button className={filter === 'Studio' ? 'filter-btn active' : 'filter-btn'} onClick={() => setFilter('Studio')}>Studio</button>
         </div>
       </div>

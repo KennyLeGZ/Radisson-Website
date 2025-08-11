@@ -163,11 +163,11 @@ function RadissonFr() {
   const [viewMode, setViewMode] = useState("cards");
 
   const slides = [
-    { image: outside1, title: "Building View: Radisson" },
-    { image: furnished1Bed1, title: "Spacious & Bright Interiors" },
-    { image: furnished1Bed2, title: "Prime Location in Montreal" },
-    { image: furnished2Bed1, title: "Designed for Comfort" },
-    { image: furnishedStudio1, title: "Modern Living at Radisson" },
+    { image: outside1, title: "Vue De L’Immeuble : Radisson" },
+    { image: furnished1Bed1, title: "Intérieurs Spacieux Et Lumineux" },
+    { image: furnished1Bed2, title: "Emplacement De Choix À Gatineau" },
+    { image: furnished2Bed1, title: "Conçu Pour Le Confort" },
+    { image: furnishedStudio1, title: "Vie Moderne Au Radisson" },
   ];
 
   const nextSlide = () => {
@@ -316,9 +316,9 @@ function RadissonFr() {
       <div className="header-left">
         {/* Desktop links */}
         <div className="desktop-links">
-          <button className="nav-header-link" onClick={() => scrollToRef(aboutRef1, -200)}>À Propos</button>
+          <button className="nav-header-link" onClick={() => scrollToRef(aboutRef1)}>À Propos</button>
           <button className="nav-header-link" onClick={() => navigate('/gallery/fr')}>Galerie</button>
-          <button className="nav-header-link" onClick={() => scrollToRef(unitsRef1, -150)}>Unités disponibles</button>
+          <button className="nav-header-link" onClick={() => scrollToRef(unitsRef1)}>Unités disponibles</button>
         </div>
 
         
@@ -369,9 +369,9 @@ function RadissonFr() {
 
       {/* Mobile Dropdown Menu */}
       <div className={`dropdown-menu ${isMenuOpen ? 'open' : ''}`}>
-        <button className="nav-header-link" onClick={() => scrollToRef(aboutRef1, -200)}>À Propos</button>
+        <button className="nav-header-link" onClick={() => scrollToRef(aboutRef1)}>À Propos</button>
         <button className="nav-header-link" onClick={() => navigate('/gallery')}>Galerie</button>
-        <button className="nav-header-link" onClick={() => scrollToRef(unitsRef1, -220)}>Unités Disponibles</button>
+        <button className="nav-header-link" onClick={() => scrollToRef(unitsRef1)}>Unités Disponibles</button>
         {/* Mobile contact toggle lives INSIDE the mobile menu */}
         <button
           className="nav-header-link"
@@ -511,7 +511,7 @@ function RadissonFr() {
               </p>
               <ul className="about-features">
                 <li>Appartements abordables et confortables</li>
-                <li>Emplacement de choix près du centre-ville d’Ottawa et des principales lignes d’OC Transpo</li>
+                <li>Emplacement idéal à Gatineau, près du centre-ville d’Ottawa et des lignes d’OC Transpo</li>
                 <li>Aménagements spacieux avec eau, chauffage, climatisation, égouts et enlèvement des déchets inclus</li>
                 <li>Communauté acceptant les animaux de compagnie</li>
               </ul>
@@ -701,7 +701,7 @@ function RadissonFr() {
             </div>
             <div className="amenities-hero-text">
               <h1>Vie connectée près d'Ottawa</h1>
-              <p>Situé dans un quartier calme à deux pas du centre-ville d’Ottawa, cet emplacement allie vie urbaine et confort quotidien.</p>
+              <p>Situé dans un quartier calme à deux pas du centre-ville d’Ottawa, cet emplacement combine vie urbaine et confort quotidien.</p>
             </div>
           </div>
         </section>
@@ -757,12 +757,11 @@ function RadissonFr() {
             <div className="modern-location-text">
               <h2>Découvrez Le Quartier</h2>
               <p>
-                Situé à l’ouest de Gatineau, les <strong>Jardins Radisson</strong> offre un accès rapide à la
-                <b>rivière des Outaouais</b> et se trouve à seulement quelques minutes du
-                <b>centre-ville d’Ottawa</b>. Avec ses cafés, restaurants et boutiques à proximité,
-                vos besoins quotidiens sont toujours à portée de main. L’<b>Université d’Ottawa</b>
-                est également accessible en moins de 15 minutes en voiture, faisant du Radisson
-                un parfait mélange de confort, de commodité et d’emplacement.
+                Situé à l’ouest de Gatineau, <strong>Les Jardins Radisson</strong> offre un accès rapide à la
+                <b> rivière des Outaouais</b> et se trouve à seulement quelques minutes du
+                <b> centre-ville d’Ottawa</b>. Avec ses cafés, restaurants et boutiques tout proches, vos besoins quotidiens sont facilement comblés.
+                De plus, <b>l’Université d’Ottawa</b> est également accessible en moins de 15 minutes en voiture, faisant du Radisson un lieu alliant confort, 
+                praticité et emplacement idéal.
               </p>
             </div>
             <div className="modern-location-map">

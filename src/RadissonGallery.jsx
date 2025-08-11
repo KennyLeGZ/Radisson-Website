@@ -163,7 +163,7 @@ function PhotoHeader() {
           >
             <img
               src={radissonLogo}
-              alt="Riviera Logo"
+              alt="Radisson Logo"
             />
             <span>RADISSON</span>
           </div>
