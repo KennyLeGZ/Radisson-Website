@@ -6,8 +6,8 @@ import BeforeAfterSlider from "./BeforeAfterSlider";
 import { useNavigate } from 'react-router-dom';
 
 // 1 Bedroom
-import furnished1Bed1 from './assets/Apartments/1Bed/furnished1Bed1.png';
-import furnished1Bed2 from './assets/Apartments/1Bed/furnished1Bed2.png';
+import furnished1Bed1 from './assets/Apartments/1Bed/furnished1Bed1.jpg';
+import furnished1Bed2 from './assets/Apartments/1Bed/furnished1Bed2.jpg';
 import img1 from './assets/Apartments/1Bed/Radisson_1Bed_7.jpg';
 import img2 from './assets/Apartments/1Bed/Radisson_1Bed_6.jpg';
 import img3 from './assets/Apartments/1Bed/Radisson_1Bed_8.jpg';
@@ -21,8 +21,8 @@ import img10 from './assets/Apartments/1Bed/Radisson_1Bed_10.jpg';
 import img11 from './assets/Apartments/1Bed/Radisson_1Bed_2.jpg';
 
 // 2 Bedroom
-import furnished2Bed1 from './assets/Apartments/2Bed/furnished2Bed1.png';
-import furnished2Bed2 from './assets/Apartments/2Bed/furnished2Bed2.png';
+import furnished2Bed1 from './assets/Apartments/2Bed/furnished2Bed1.jpg';
+import furnished2Bed2 from './assets/Apartments/2Bed/furnished2Bed2.jpg';
 import img12 from './assets/Apartments/2Bed/Radisson_2Bed_22.jpg';
 import img13 from './assets/Apartments/2Bed/Radisson_2Bed_17.jpg';
 import img14 from './assets/Apartments/2Bed/Radisson_2Bed_5.jpg';
@@ -39,8 +39,8 @@ import img24 from './assets/Apartments/2Bed/Radisson_2Bed_15.jpg';
 import img25 from './assets/Apartments/2Bed/Radisson_2Bed_4.jpg';
 
 // 3 Bedroom
-import furnished3Bed1 from './assets/Apartments/3Bed/furnished3Bed1.png';
-import furnished3Bed2 from './assets/Apartments/3Bed/furnished3Bed2.png';
+import furnished3Bed1 from './assets/Apartments/3Bed/furnished3Bed1.jpg';
+import furnished3Bed2 from './assets/Apartments/3Bed/furnished3Bed2.jpg';
 import img26 from './assets/Apartments/3Bed/Radisson_3Bed_3.jpg';
 import img27 from './assets/Apartments/3Bed/Radisson_3Bed_2.jpg';
 import img28 from './assets/Apartments/3Bed/Radisson_3Bed_15.jpg';
@@ -56,10 +56,10 @@ import img37 from './assets/Apartments/3Bed/Radisson_3Bed_4.jpg';
 import img38 from './assets/Apartments/3Bed/Radisson_3Bed_5.jpg';
 
 // Studio
-import furnishedStudio1 from './assets/Apartments/Studio/furnishedStudio1.png';
+import furnishedStudio1 from './assets/Apartments/Studio/furnishedStudio1.jpg';
 
 // 4 Bedroom
-import furnished4Bed1 from './assets/Apartments/4Bed/furnished4Bed1.png';
+import furnished4Bed1 from './assets/Apartments/4Bed/furnished4Bed1.jpg';
 
 // Logo
 import radissonLogo from './assets/Icons/Radisson-logo.png';
